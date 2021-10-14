@@ -1,3 +1,4 @@
+var enddiv = document.createElement("div");
 var highScoreArray= JSON.parse(localStorage.getItem("highScoreArray")) || []   
 console.log(highScoreArray);
 var timeEl = document.createElement("h3");
@@ -129,22 +130,47 @@ function buildEndScreen() {
     label.textContent = "initials";
     label.setAttribute("for", "initials");
     var input = document.createElement("input");
+    var button = document.createElement("input");
     input.setAttribute("type","text");
-    var enddiv = document.createElement("div");
-    var highScore = {
-        name: "cqy",
-        score: totalScore
+    // button.textContent="save";
+    button.setAttribute("type","button");
+    input.setAttribute("name", "initials");
+    
+    button.textContent="submit";
+    button.onclick=function(){
+        var highScore = {
+            name: input.value,
+            score: totalScore
+        }
+        console.log(highScore);
+        highScoreArray.push(highScore);
+        localStorage.setItem("highScoreArray",JSON.stringify(highScoreArray));
+        getHighScore();
     }
-   highScoreArray.push(highScore);
-   localStorage.setItem("highScoreArray",JSON.stringify(highScoreArray));
-   console.log(localStorage);
+    
     enddiv.innerHTML = "<h3>endgame " + totalScore + "</h3>";
     enddiv.setAttribute("class", "end-game");
     enddiv.appendChild(label);
     enddiv.appendChild(input);
+    enddiv.appendChild(button);
     main.appendChild(enddiv);
 }
+
+
 function getHighScore() {
+    highScoreArray.sort(function(a,b){
+        return b.score-a.score;
+    });
+    var scoreList=document.createElement("ol");
+    enddiv.appendChild(scoreList);
+    highScoreArray.forEach(function(score){
+        var li = document.createElement("li");
+        console.log(score);
+        li.textContent=score.name + " " + score.score;
+        scoreList.appendChild(li);
+    })
+    console.log(highScoreArray);
+
     //retrieve scores from local storage
 }
  
