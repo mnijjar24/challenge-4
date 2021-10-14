@@ -132,11 +132,10 @@ function buildEndScreen() {
     var input = document.createElement("input");
     var button = document.createElement("input");
     input.setAttribute("type","text");
-    // button.textContent="save";
     button.setAttribute("type","button");
     input.setAttribute("name", "initials");
     
-    button.textContent="submit";
+    button.textContent="save";
     button.onclick=function(){
         var highScore = {
             name: input.value,
