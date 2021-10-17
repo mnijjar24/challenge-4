@@ -14,8 +14,7 @@ This code quiz is designed so that coding bootcamp students, or anyone in genera
 
 ## Links
 Deployed Link:
-https://nnikhil84.github.io/wellnesshub.github.io
+https://mnijjar24.github.io/challenge-4/
 
 GitHub Repository Link:
-https://github.com/nnikhil84/wellnesshub.github.io/tree/main
-
+https://github.com/mnijjar24/challenge-4
