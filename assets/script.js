@@ -27,33 +27,33 @@ var timeInterval = setInterval(function () {
 //Questions
 var questions = [
     {
-        questionText: "1. An HTML document can contain _____",
-        choices: ["a. Attributes", "b. Tags ", "c. Raw text", "d. All of the above"],
+        questionText: "1. What are the two basic groups of dataypes in JavaScript?",
+        choices: ["a. Primitive", "b. Reference types", "c. None of the above", "d. All of the above"],
         answer: "d. All of the above"
     },
 
     {
-        questionText: "2. A page designed in HTML is called _____",
-        choices: ["a. Application", "b. Cover page", "c. Front-end", "d. Web Page"],
-        answer: "d. Web Page"
+        questionText: "2. Which symbol is used for comments in Javascript?",
+        choices: ["a. \* *\ ", "b. \* */ ", "c. \\ ", "d. // "],
+        answer: "d. // "
     },
 
     {
-        questionText: "3. If we want to place text around an image, which CSS property should we use?",
-        choices: ["a. Push", "b. Float", "c. Align", "d. Wrap"],
+        questionText: "3. Which built-in method calls a function for each element in the array??",
+        choices: ["a. while()", "b. forEach()", "c. loop()", "d. None of the above."],
+        answer: "b. forEach()"
+    },
+
+    {
+        questionText: "4. Which of the following is not JavaScript data type?",
+        choices: ["a. Undefined", "b. Float", "c. Boolean", "d. Number"],
         answer: "b. Float"
     },
 
     {
-        questionText: "4. Can we align an element by setting margin-left and margin-right?",
-        choices: ["a. Yes, it is possible", "b. No, it is not possible"],
-        answer: "b. No, it is not possible"
-    },
-
-    {
-        questionText: "5. Choose the correct HTML tag for a large title.",
-        choices: ["a. H1", "b. Heading", "c. Head", "d. H6"],
-        answer: "a. H1"
+        questionText: "5. Inside which HTML element do we put the JavaScript?",
+        choices: ["a. <script>", "b. <head>", "c. <meta>", "d. <style>"],
+        answer: "a. <script>"
     },
 ];
 
@@ -130,12 +130,13 @@ function buildEndScreen() {
     label.textContent = "initials";
     label.setAttribute("for", "initials");
     var input = document.createElement("input");
-    var button = document.createElement("input");
+    var button = document.createElement("button");
+    button.textContent="save";
+    // input.innerHTML="submit";
     input.setAttribute("type","text");
     button.setAttribute("type","button");
     input.setAttribute("name", "initials");
     
-    button.textContent="save";
     button.onclick=function(){
         var highScore = {
             name: input.value,
